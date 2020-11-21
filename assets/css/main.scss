@@ -2,5 +2,329 @@
 ---
 
 @import "bootstrap/bootstrap";
+@import "utilities";
+// gradient: https://www.gradientmagic.com/collection/rainbowstandard
+@import url("https://fonts.googleapis.com/css?family=Lato:300");
 
 /* add additional CSS rules below */
+
+:root {
+    // Color scheme
+    --black: #0B0C10;
+    --navy-blue: #1F2833;
+    --gray: #C5C6C7;
+    --cyan: #66FCF1;
+    --turquoise: #45A292;
+}
+html, body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--black);
+    color: white;
+    margin: 0;
+    height:100%;
+    width:100%;
+    padding:0;
+    scroll-behavior: smooth;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: var(--cyan);
+}
+i {
+    color: var(--turquoise);
+}
+img {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+::-moz-selection { /* Code for Firefox */
+    background: var(--cyan);
+    color: var(--black);
+}
+::selection {
+    background: var(--cyan);
+    color: var(--black);
+}
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+}
+// Section fit display screen
+section {
+    // margin: 3rem 0;
+    display: block;
+    height: auto;
+    width: 100%;
+}
+.fit-section {
+    display: block;
+    background-size: contain;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+@media screen and (max-width: 768px) {
+    .fit-section {
+        height: auto;
+    }
+}
+hr {
+    background-color: var(--turquoise);
+}
+.underline::after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid var(--cyan);
+    width: 100%;
+}
+// Custome bootstrap button
+.btn {
+    border-radius: 0;
+    background-color: var(--black);
+    color: var(--cyan);
+    border-color: var(--turquoise);
+    font-size: small;
+}
+.btn:hover {
+    color: var(--cyan);
+    background-color: var(--navy-blue);
+}
+// Navigation bar
+.sticky-wrapper {
+    display: block;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+.stuck {
+    position: fixed;
+    top: 0;
+    background-color: var(--black);
+    z-index: 999;
+
+    .nav-brand {
+        visibility: visible;
+        position: relative;
+        left: 0;
+        transition: 0.5s;
+    }
+    #navbarNavAltMarkup {
+        justify-content: end !important;
+        justify-content: flex-end !important;
+    }
+}
+.navbar {
+    padding: 1rem 0;
+    width: 100%;
+    justify-content: end;
+}
+@media screen and (max-width: 600px) {
+    .navbar {
+        padding: 1.5rem;
+    }
+}
+.nav-brand {
+    position: absolute;
+    left: -300px;
+    visibility: hidden;
+    color: var(--cyan);
+    font-family: 'Kanit', sans-serif;
+    }
+    .nav-brand:hover , .nav-brand:focus {
+        background-color: transparent;
+        text-decoration: none;
+        color: var(--cyan);
+    }
+    .nav-brand small {
+        font-size: 50%;
+    }
+.nav-item {
+    color: var(--cyan) !important;
+    text-align: end;
+    text-transform: uppercase;
+    font-size: small;
+    }
+.nav-item::after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid var(--cyan);
+    width: 0;
+    transition: width 0.7s ease;
+}
+.nav-item:hover::after {
+    width: 100%;
+}
+.nav-item-active::after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid var(--cyan);
+    width: 100%;
+    transition: width 0.7s ease;
+}
+@media screen and (min-width: 750px) {
+    .nav-item:not(:last-child) {
+        margin-right: 4rem;
+    }
+}
+@media screen and (min-width: 601px) {
+    .nav-brand {
+        font-size: x-large;
+    }
+}
+@media screen and (max-width: 600px) {
+    .nav-brand {
+        font-size: 24px;
+    }
+    .nav-brand small {
+        display: none;
+    }
+}
+.invert {
+    background-color: var(--cyan);
+    color: var(--navy-blue);
+    width: fit-content;
+    width: -moz-fit-content;
+    padding: 1rem 1.5rem;
+}
+@media screen and (max-width: 800px) {
+    .invert {
+        margin: auto;
+        font-size: 1.5rem;
+    }
+}
+.bold {
+    font-weight: 800;
+}
+
+// About section
+.card-wrapper {
+    padding-bottom: 2rem;
+}
+.card {
+    padding-top: 2rem;
+    border: 0;
+}
+#profile-pic {
+    width: 17rem;
+    height: 17rem;
+    margin-left: auto;
+    margin-right: auto;
+    border: 10px solid var(--navy-blue);
+    border-radius: 50%;
+}
+.social-icon {
+    color: var(--turquoise);
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+a.social-icon {
+    margin-top: 1rem;
+}
+.job-title {
+    text-transform: uppercase;
+    color: var(--turquoise);
+}
+.image-half {
+    background-color: var(--black);
+}
+.info-half {
+    background-color: var(--black);
+}
+
+// Resume
+.timeline {
+    position: relative;
+    max-width: 100%;
+    margin: auto 0;
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 1px;
+    width: 100vw;
+    background-color: var(--navy-blue);
+    margin: 2rem 0;
+    margin-left: calc(50% - 50vw);
+}
+.content {
+    padding: 3rem 0;
+    overflow: hidden;
+}
+.timeline-wrapper {
+    margin: 1.5em 1em 0 0;
+    max-width: fit-content;
+}
+.timeline-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: var(--black);
+    border: 2px solid var(--navy-blue);
+    border-radius: 50%;
+    top: -49px;
+    z-index: 1;
+}
+
+// Project
+.project-wrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.project-cover {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.project-overlay {
+    position: absolute;
+    background-clip: border-box;
+    top: 0;
+    left: 15px;
+    background-color: var(--navy-blue);
+    color: white;
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+}
+.project-wrapper:hover .project-overlay {
+    width: calc(100% - 1.5rem - 15px); // subtract wrapper and col padding
+}
+
+// Skill
+#skill-section {
+    .underline {
+        width: fit-content;
+        width: -moz-fit-content;
+    }
+}
+.circle-bar-orange {
+    border-color: orange;
+}
+.ldBar {
+    max-width: 100%;
+    height: 3rem !important;
+
+    .ldBar-label {
+        display: none;
+    }
+
+    rect {
+        fill: var(--turquoise);
+    }
+}
+
+// Loading overlay
+.loadingoverlay {
+    background: var(--navy-blue) !important;
+
+    .loadingoverlay_fa {
+        color: var(--cyan) !important;
+    }
+}

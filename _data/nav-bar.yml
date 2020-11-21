@@ -1,8 +1,10 @@
-- name: Home
-  link: /
 - name: About
-  link: /about
+  link: '#about-section'
 - name: Resume
-  link: /resume
-- name: Contact
-  link: /contact
+  link: '#resume-section'
+- name: Project
+  link: '#project-section'
+- name: Skill
+  link: '#skill-section'
+# - name: Contact
+#   link: /contact

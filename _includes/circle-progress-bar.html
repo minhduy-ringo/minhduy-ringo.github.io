@@ -1,0 +1,13 @@
+<!-- Circle progress bar template -->
+<div class="progress mx-auto {{include.size}}" data-value="{{include.percent}}">
+    <span class="progress-left">
+        <span class="progress-bar circle-bar-orange"></span>
+    </span>
+    <span class="progress-right">
+        <span class="progress-bar circle-bar-orange"></span>
+    </span>
+    <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+        <div class="h5">{{include.value}}</div>
+    </div>
+</div>
+<p class="{{include.label-size}} text-center pt-2">{{include.label}}</p>

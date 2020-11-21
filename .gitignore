@@ -5,3 +5,6 @@ _site
 
 # Visual code
 .vscode
+
+# Assets
+*/images/

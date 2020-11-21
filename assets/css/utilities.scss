@@ -1,0 +1,137 @@
+//
+.border-md {
+    border-right-width: 0 !important;
+    border-left-width: 0 !important;
+}
+@media (min-width: 768px) {
+    .border-md {
+      border-right-width: 1px !important;
+      border-left-width: 1px !important;
+    }
+  }
+// Progress bar ulti
+.progress {
+    width: 110px;
+    height: 110px;
+    background: none;
+    position: relative;
+}
+
+.progress.small{
+    width: 80px;
+    height: 80px;
+}
+
+.progress::after {
+content: "";
+width: 100%;
+height: 100%;
+border-radius: 50%;
+border: 4px solid white;
+position: absolute;
+top: 0;
+left: 0;
+}
+
+.progress>span {
+width: 50%;
+height: 100%;
+overflow: hidden;
+position: absolute;
+top: 0;
+z-index: 1;
+}
+
+.progress .progress-left {
+left: 0;
+}
+
+.progress .progress-bar {
+width: 100%;
+height: 100%;
+background: none;
+border-width: 4px;
+border-style: solid;
+position: absolute;
+top: 0;
+}
+
+.progress .progress-left .progress-bar {
+left: 100%;
+border-top-right-radius: 80px;
+border-bottom-right-radius: 80px;
+border-left: 0;
+-webkit-transform-origin: center left;
+transform-origin: center left;
+}
+
+.progress .progress-right {
+right: 0;
+}
+
+.progress .progress-right .progress-bar {
+left: -100%;
+border-top-left-radius: 80px;
+border-bottom-left-radius: 80px;
+border-right: 0;
+-webkit-transform-origin: center right;
+transform-origin: center right;
+}
+
+.progress .progress-value {
+position: absolute;
+top: 0;
+left: 0;
+}
+
+//
+@mixin gradient-border {
+  --border-width: 2px;
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  color: var(--black);
+  border-radius: var(--border-width);
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(
+      60deg,
+      hsl(224, 85%, 66%),
+      hsl(269, 85%, 66%),
+      hsl(314, 85%, 66%),
+      hsl(359, 85%, 66%),
+      hsl(44, 85%, 66%),
+      hsl(89, 85%, 66%),
+      hsl(134, 85%, 66%),
+      hsl(179, 85%, 66%)
+    );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 4s alternate infinite;
+  }
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+//
+.lp-1 {
+  letter-spacing: 5px;
+}
+.lp-2 {
+  letter-spacing: 10px;
+}

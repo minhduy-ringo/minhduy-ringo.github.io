@@ -1,0 +1,12 @@
+education:
+  - school-name: Ho Chi Minh City University of Science
+    degree-field: Bachelor in Computer Science
+    year: 2014-2020
+    desc: something here
+
+experience:
+  - company-name: Gameloft Viet Nam 
+    position: C++ Game Dev
+    duration: 6 months
+    year: 2018-2019
+    desc: something here

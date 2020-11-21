@@ -4,30 +4,18 @@
 <!DOCTYPE html>
 <html lang="{{ site.lang | default: "en-US" }}">
 
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-
-    <!-- CSS style sheet -->
-    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
-
-    <!-- Font Awesome kit -->
-    <script src="https://kit.fontawesome.com/e5407c478d.js" crossorigin="anonymous"></script>
-    
-    {% seo %}
-</head>
+{% include header.html %}
 
 <body>
+    <!-- Navigation bar for every pages -->
     {% include nav-bar.html %}
-    <div class="container">
-        {{ content}}
-    </div>
+    
 
-    <!-- scripts -->
-    <script type="text/javascript" src="/assets/js/jquery-3.5.1.min.js"></script>
-    <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/assets/js/jquery.backstretch.min.js"></script>
-    <script type="text/javascript" src="/assets/js/jquery.waypoints.min.js"></script>
+    <!-- Content here -->
+    {{ content }}
+
+    <!-- Footer -->
+    {% include footer.html %}
 </body>
 
 </html>
