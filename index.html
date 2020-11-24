@@ -16,17 +16,13 @@ layout: default
                     <hr style="width: 10%;">
                     <h6 class="job-title text-center lead lp-1">{{site.author.job-title}}</h5>
                 </div>
-                <!-- <div class="card-footer text-center center-block">
-                    <a class="social-icon" href="https://www.facebook.com/duyAkaRingo/"><i class="fab fa-facebook fa-lg"></i></a>
-                    <a class="social-icon" href="https://join.skype.com/invite/VgcctamdfB8v"><i class="fab fa-skype fa-lg"></i></a>
-                </div> -->
             </div>
             <div class="col-md-6 info-half my-auto">
-                <h1 class="display-3">Hello,</h1>
+                <h1 class="display-3" >Hello,</h1>
                 <br>
                 <p>{{site.author.description}}</p>
                 <br>
-                <a class="btn" href="/assets/files/text.txt" download="VoMinhDuy_CV.txt">Download CV</a>
+                <a class="btn" href="/assets/files/test.pdf">Download CV</a>
             </div>
         </div>
     </div>
@@ -59,7 +55,7 @@ layout: default
                         <small class="text-muted font-italic">{{item.duration}}</small>
                         <h4 class="font-weight-bold mt-3 mb-0">{{item.position}}</h4>
                         <p class="text-muted"><i class="fas fa-map-marker-alt pr-2"></i>{{item.company-name}}</p>
-                        <p>{{item.desc}}</p>
+                        <p class="font-weight-light">{{item.desc}}</p>
                     </div>
                     {% endfor %}
                 </div>
@@ -94,50 +90,65 @@ layout: default
 <section class="my-5" id="skill-section">
     <div class="container">
         <div class="row">
-            <div class="col-md-6" id="language-skill">
+            <div class="col-md-6 pr-4" id="language-skill">
                 <h2 class="font-weight-bold underline">Languages</h2>
                 <div class="my-4">
-                    <div class="mb-3 row">
-                        <div class="col-md-4">Vietnamese</div>
-                        <p class="col-md-6 text-right">Native</p>
+                    <div class="row skill-hl">
+                        <p class="col-md-4 font-weight-light">Vietnamese</p>
+                        <p class="col-md-8 text-right font-italic">Native</p>
                     </div>
-                    <div class="mb-3 row">
-                        <div class="col-md-4">Japanese</div>
-                        <p class="col-md-6 text-right">N5</p>
+                    <div class="row skill-hl">
+                        <p class="col-md-4 font-weight-light">Japanese</p>
+                        <p class="col-md-8 text-right font-italic">N5</p>
                     </div>
-                    <div class="lang-wrapper">
-                        <div class="lang-name">English</div>
-                        <div class="row">
-                            <div class="col-md-4 my-auto">
-                                {% include circle-progress-bar.html percent="72" value="6.5" label-size="h4" label="Overall" %}
-                            </div>
-                            <div class="col-md-6">
-                                <div class="row mb-3">
-                                    <div class="col-sm">{% include circle-progress-bar.html size="small" percent="72" value="6.5" label-size="h6" label="Listening" %}</div>
-                                    <div class="col-sm">{% include circle-progress-bar.html size="small" percent="83" value="7.5" label-size="h6" label="Reading" %}</div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm">{% include circle-progress-bar.html size="small" percent="67" value="6.0" label-size="h6" label="Writing" %}</div>
-                                    <div class="col-sm">{% include circle-progress-bar.html size="small" percent="55" value="5.0" label-size="h6" label="Speaking" %}</div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="row skill-hl">
+                        <p class="col-md-4 font-weight-light">English</p>
+                        <p class="col-md-8 text-right font-italic">IELTS 6.5</p>
+                    </div>
+                    <div class="row my-3">
+                        <div class="col-3">{% include circle-progress-bar.html size="small" percent="72" value="6.5" label="Listening" %}</div>
+                        <div class="col-3">{% include circle-progress-bar.html size="small" percent="83" value="7.5" label="Reading" %}</div>
+                        <div class="col-3">{% include circle-progress-bar.html size="small" percent="67" value="6.0" label="Writing" %}</div>
+                        <div class="col-3">{% include circle-progress-bar.html size="small" percent="55" value="5.0" label="Speaking" %}</div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6" id="programming-skill">
+            <!-- <div class="col-md-2"></div> -->
+            <div class="col-md-6 pl-4" id="programming-skill">
                 <h2 class="font-weight-bold underline">Programming</h2>
                 <div class="my-4">
-                    {% include skill-bar.html name="HTML/CSS/JS" percent="60" %}
-                    {% include skill-bar.html name="Python" percent="80" %}
-                    {% include skill-bar.html name="C++" percent="80" %}
-                    {% include skill-bar.html name="SQL Server" percent="75" %}
-                    {% include skill-bar.html name="MySQL" percent="75" %}
+                    {% for skill in site.data.skill %}
+                        {% capture skillName %}{{skill.name}}{% endcapture %}
+                        {% capture skillPercent %}{{skill.percent}}{% endcapture %}
+                        {% include skill-bar.html name=skillName percent=skillPercent %}
+                    {% endfor %}
                 </div>
             </div>
         </div>
         <div class="d-flex w-100 justify-content-center py-5" id="github">
             <a class="btn d-flex h-100 align-items-center py-2" href="https://github.com/minhduy-ringo"><span class="align-middle text-uppercase lp-1 pr-3">My github</span><i class="fab fa-github fa-2x"></i></a>
+        </div>
+    </div>
+</section>
+<!-- Contact section -->
+<section class="my-5" id="contact-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h1 class="invert bold w-100 text-center">Contact me</h1>
+                <div class="d-flex justify-content-star">
+                    <a class="social-icon" href="https://www.facebook.com/duyAkaRingo/"><i class="fab fa-facebook-square fa-lg"></i></a>
+                    <a class="social-icon" href="https://join.skype.com/invite/VgcctamdfB8v"><i class="fab fa-skype fa-lg"></i></a>
+                    <a class="social-icon" href="https://www.linkedin.com/in/võ-minh-duy-199817179/"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+            <div class="col-6 pl-4 border-bottom">
+                <div class="row">
+                    <p class="col-xl-2 text-uppercase">Phone</p><p class="col-xl-10 font-weight-light">{{site.author.phonenumber}}</p>
+                    <p class="col-xl-2 text-uppercase">Email</p><a class="col-xl-10 font-weight-light" href="mailto:minhduy.ringo@gmail.com">{{site.author.email}}</a>
+                    <p class="col-xl-2 text-uppercase">Location</p><p class="col-xl-10 font-weight-light">{{site.author.location}}</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>

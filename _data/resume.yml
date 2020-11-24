@@ -2,11 +2,14 @@ education:
   - school-name: Ho Chi Minh City University of Science
     degree-field: Bachelor in Computer Science
     year: 2014-2020
-    desc: something here
+    desc: 
 
 experience:
   - company-name: Gameloft Viet Nam 
     position: C++ Game Dev
-    duration: 6 months
+    duration: 8 months
     year: 2018-2019
-    desc: something here
+    desc: >- 
+      Worked as an intern in C++ Game Dev team, my primary job were to help debug build of various
+      game titles, e.g., Asphalt 9, Dragon Mania, Paddington Run.
+

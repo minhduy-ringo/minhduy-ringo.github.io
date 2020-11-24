@@ -15,6 +15,7 @@
     --gray: #C5C6C7;
     --cyan: #66FCF1;
     --turquoise: #45A292;
+    --yellow: #EAFF03;
 }
 html, body {
     font-family: 'Open Sans', sans-serif;
@@ -196,7 +197,42 @@ hr {
 .bold {
     font-weight: 800;
 }
-
+#scroll-top {
+    visibility: hidden;
+    padding-top: 10px;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    border-radius: 50% !important;
+    
+    i {
+        color: var(--turquoise);
+    }
+}
+// From https://codepen.io/matthewlein/pen/fvrLD
+.hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    // the normal box delays visibility transition so it doesn't hide until after the opacity transition is done
+    @include transition(
+        opacity 500ms linear,
+        visibility 0s linear 500ms
+    )
+}
+.show {
+    opacity: 1 !important;
+    visibility: visible !important;
+    cursor: pointer;
+    // the shown box does not delay visibility, so it shows instantly and transitions opacity
+    @include transition(
+        opacity 500ms linear,
+        visibility 0s linear
+    )
+}
+//
 // About section
 .card-wrapper {
     padding-bottom: 2rem;
@@ -213,15 +249,6 @@ hr {
     border: 10px solid var(--navy-blue);
     border-radius: 50%;
 }
-.social-icon {
-    color: var(--turquoise);
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    margin-bottom: 0.5rem;
-}
-a.social-icon {
-    margin-top: 1rem;
-}
 .job-title {
     text-transform: uppercase;
     color: var(--turquoise);
@@ -231,6 +258,9 @@ a.social-icon {
 }
 .info-half {
     background-color: var(--black);
+    p {
+        line-height: 1.5;
+    }
 }
 
 // Resume
@@ -255,7 +285,11 @@ a.social-icon {
 }
 .timeline-wrapper {
     margin: 1.5em 1em 0 0;
-    max-width: fit-content;
+    max-width: 400px;
+
+    p {
+        line-height: 1.5;
+    }
 }
 .timeline-wrapper::before {
     content: '';
@@ -292,6 +326,7 @@ a.social-icon {
     width: 0;
     height: 100%;
     transition: .5s ease;
+    opacity: 0.8;
 }
 .project-wrapper:hover .project-overlay {
     width: calc(100% - 1.5rem - 15px); // subtract wrapper and col padding
@@ -304,19 +339,70 @@ a.social-icon {
         width: -moz-fit-content;
     }
 }
-.circle-bar-orange {
-    border-color: orange;
+.circle-bar-yellow {
+    border-color: var(--yellow);
 }
 .ldBar {
     max-width: 100%;
-    height: 3rem !important;
+    height: 2.5rem !important;
 
     .ldBar-label {
         display: none;
     }
 
     rect {
-        fill: var(--turquoise);
+        fill: var(--gray);
+    }
+}
+.skill-hl {
+    height: 2.5rem;
+    p {
+        margin: 0;
+        align-self: center;
+    }
+}
+.skill-hl:hover {
+    background-color: var(--navy-blue);
+}
+#language-skill {
+    @media screen and (min-width: 768px) {
+        border-right: 0.5px solid var(--navy-blue);
+    }
+}
+#programming-skill {
+    @media screen and (min-width: 768px) {
+        border-left: 0.5px solid var(--navy-blue);
+    }
+}
+// Contact
+#contact-section {
+    height: 300px;
+    .container {
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
+    a:hover {
+        background-color: transparent;
+        text-decoration: none;
+        color: var(--yellow);
+    }
+    .social-icon {
+        padding-right: 1rem;
+        i {
+            color: var(--cyan);
+        }
+    }
+    a.social-icon {
+        margin-top: 1rem;
+    }
+    .border-bottom {
+        border-bottom: 1px solid var(--cyan) !important;
+        width: 50% !important;
     }
 }
 

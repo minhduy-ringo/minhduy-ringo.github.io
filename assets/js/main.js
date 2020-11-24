@@ -2,13 +2,38 @@
 // Show loading overlay with basic fontawesome icon
 $.LoadingOverlay("show", {
   image       : "",
-  fontawesome : "fas fa-circle-notch fa-spin"
+  fontawesome : "fas fa-circle-notch fa-spin",
+  zIndex      : 1000,
+  fade        : true
 });
 
 $(function() {
   
   // Hide overlay when done loading
-  $.LoadingOverlay("hide");
+  setTimeout(function(){
+    $.LoadingOverlay("hide");
+}, 1000);
+
+  //Get the button:
+  mybutton = document.getElementById("scroll-top");
+
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+      mybutton.classList.add("show");
+      mybutton.classList.remove("hidden");
+    } else {
+      mybutton.classList.add("hidden");
+      mybutton.classList.remove("show");
+    }
+  }
+
+  // When the user clicks on the button, scroll to the top of the document
+  $("#scroll-top").on("click", function() {
+    $('html, body').animate({scrollTop:0},'50');
+  })
 
   $(".progress").each(function() {
 

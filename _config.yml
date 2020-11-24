@@ -19,13 +19,14 @@ author:
   birthday: 6 November, 1996
   email: minhduy.ringo@gmail.com
   github: minhduy-ringo
-  job-title: Software Engineer
+  job-title: Developer
   phonenumber: (+84) 352837767
   location: Ho Chi Minh City, Viet Nam
-  description: >-
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-    Phasellus ex neque, porttitor eu rhoncus at, luctus quis sapien. 
-    Donec pretium euismod lacus vitae pharetra. Aenean in leo dolor. 
+  description: "
+    I am a fresh graduate in computer sciene.
+    <br>
+    Though my knowledge in a specific field might be lacking,
+    my eager to learn and hard-working always help me tackle new project."
 description: >- # this means to ignore newlines until "baseurl:"
   A small website I make to use as a resume, using Jekyll, Bootstrap and hosted by Github Pages.
 baseurl: "" # the subpath of your site, e.g. /blog

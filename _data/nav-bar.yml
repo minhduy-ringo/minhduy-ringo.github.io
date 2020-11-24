@@ -6,5 +6,7 @@
   link: '#project-section'
 - name: Skill
   link: '#skill-section'
-# - name: Contact
-#   link: /contact
+# - name: Blog
+#   link: '#blog-section'
+- name: Contact
+  link: '#contact-section'
