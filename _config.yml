@@ -23,10 +23,10 @@ author:
   phonenumber: (+84) 352837767
   location: Ho Chi Minh City, Viet Nam
   description: "
-    I am a fresh graduate in computer sciene.
+    I am a fresh graduate in computer science.
     <br>
     Though my knowledge in a specific field might be lacking,
-    my eager to learn and hard-working always help me tackle new project."
+    my eager to learn and hard-working always help me tackle new projects."
 description: >- # this means to ignore newlines until "baseurl:"
   A small website I make to use as a resume, using Jekyll, Bootstrap and hosted by Github Pages.
 baseurl: "" # the subpath of your site, e.g. /blog
